@@ -134,10 +134,10 @@
                     <ul>
                         <li class="menu-title">Main</li>
                         <li class="active">
-                            <a href="admin-panel.html"><i class="fa fa-dashboard"></i> <span>Add User</span></a>
+                            <a href="company-neworder.html"><i class="fa fa-dashboard"></i> <span>New Order</span></a>
                         </li>
 						             <li>
-                            <a href="add-medicine.html"><i class="fa fa-user-md"></i> <span>Add Medicines</span></a>
+                            <a href="company-checkstatus.html"><i class="fa fa-user-md"></i> <span>Check Status</span></a>
                         </li>
                     </ul>
                 </div>
@@ -145,18 +145,25 @@
         </div>
 
 
-<!--Middle Screen begins here-->
+        <!--Middle Layer starts here -->
+
         <div class="page-wrapper">
             <div class="content">
                 <div class="row">
+
+
                     <div class="col-lg-8 offset-lg-2">
-                        <h4 class="page-title">Add Medicine</h4>
+                        <h4 class="page-title">Place a New Order</h4>
                     </div>
+
+
                 </div>
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
                         <form>
                             <div class="row">
+
+
 
                               <div class="col-sm-6">
                                   <div class="form-group">
@@ -170,39 +177,97 @@
                                       </select>
                                   </div>
                               </div>
-
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label>Medicine Name<span class="text-danger"></span></label>
-                                        <input class="form-control" type="text">
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label>Price <span class="text-danger"></span></label>
-                                        <input type="number" class="form-control">
-                                    </div>
-                                </div>
+                              </div>
+                          </form>
+                          </div>
+                  </div>
 
 
 
-                            </div>
+
+
+
+
+
+                              <div class="row">
+                                  <div class="col-lg-8 offset-lg-2">
+                                      <form>
+                                        <div class="row">
+
+
+
+
+        <div class="col-xs-12">
+            <div class="col-md-12" >
+
+                <div id="field">
+                <div id="field0">
+<!-- Text input-->
+<div class = "col-sm-6">
+<div class="form-group">
+  <label for="action_id">Medicine Name <span class = "text-danger"></span></label>
+
+  <input class = "form-control" id="action_id" name="action_id" type="text" placeholder="" style="width:350px;">
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class = "col-sm-6">
+<div class="form-group">
+  <label  for="action_name">Medicine Count <span class = "text-danger"></span></label>
+
+  <input id="action_name" name="action_name" type="number" placeholder="" class="form-control" style="width:350px;">
+
+  </div>
+</div>
+
+
+<br><br>
+       <!-- File Button -->
+
+
+</div>
+</div>
+<!-- Button -->
+<div class="form-group">
+  <div class="col-md-4">
+    <button id="add-more" name="add-more" class="btn btn-primary">Add More</button>
+  </div>
+</div>
+<br><br>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+                                          </div>
+
+
 
                             <div class="m-t-20 text-center">
-                                <button class="btn btn-primary submit-btn">Add Medicine</button>
+                                <button class="btn btn-primary submit-btn">Place an Order</button>
                             </div>
+
+
                         </form>
                     </div>
                 </div>
             </div>
-        <!--Middle Screen ends here-->
+        <!--Last Layer ends here -->
 
 
 
-          <div class="sidebar-overlay" data-reff=""></div>
+        <div class="sidebar-overlay" data-reff=""></div>
     <script src="assets/js/jquery-3.2.1.min.js"></script>
-	<script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.slimscroll.js"></script>
     <script src="assets/js/Chart.bundle.js"></script>
@@ -210,5 +275,42 @@
     <script src="assets/js/app.js"></script>
 
 </body>
+
+
+
+<script>
+
+
+  $(document).ready(function () {
+      //@naresh action dynamic childs
+      var next = 0;
+      $("#add-more").click(function(e){
+          e.preventDefault();
+          var addto = "#field" + next;
+          var addRemove = "#field" + (next);
+          next = next + 1;
+          var newIn = ' <div id="field'+ next +'" name="field'+ next +'"><!-- Text input--><div class = "col-sm-6"><div class="form-group"> <label  for="action_id">Medicine Name<span class="text-danger"></span></label>  <input id="action_id" name="action_id" type="text" placeholder="" class="form-control" style="width:350px;"> </div></div><br><br> <!-- Text input--><div class="col-sm-6>"<div class="form-group"> <label for="action_name">Medicine Count<span class="text-danger"></span></label>  <input id="action_name" name="action_name" type="text" placeholder="" class="form-control" style="width:350px;"> </div></div><br><br>';
+          var newInput = $(newIn);
+          var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me" >Remove</button></div></div><div id="field"> <br><br>';
+          var removeButton = $(removeBtn);
+          $(addto).after(newInput);
+          $(addRemove).after(removeButton);
+          $("#field" + next).attr('data-source',$(addto).attr('data-source'));
+          $("#count").val(next);
+
+              $('.remove-me').click(function(e){
+                  e.preventDefault();
+                  var fieldNum = this.id.charAt(this.id.length-1);
+                  var fieldID = "#field" + fieldNum;
+                  $(this).remove();
+                  $(fieldID).remove();
+              });
+      });
+
+  });
+
+
+</script>
+
 
 </html>
