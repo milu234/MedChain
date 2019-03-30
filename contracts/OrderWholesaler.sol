@@ -1,5 +1,7 @@
 pragma solidity ^0.5.0;
 
+import "./UserInfo.sol";
+
 contract OrderWholesaler{
 	
 	// enum status{
@@ -7,18 +9,25 @@ contract OrderWholesaler{
 	// 	accepted,
 	// 	rejected
 	// }
-
+	UserInfo user;
 	uint orderCount;
 	uint distinctOrders;
 	uint defManId;
+	uint userId;
 
 	//struct of order placed by wholesaler
 	struct Order{
 		uint orderId;
 		uint medId;
 		uint count;
+		uint uid;
 		uint manId;
 		uint status;
+	}
+
+	constructor() public{
+		user = new UserInfo();
+		userId = user.userMap(msg.sender);
 	}
 
 	mapping(uint=>Order) public orderMap;
@@ -38,7 +47,7 @@ contract OrderWholesaler{
 	//append medicines to list
 	function addMedToOrder(uint medId, uint count,uint manId) public {
 		uint orderId = distinctOrders;
-		obj = Order(orderId,medId,count,manId,0);
+		obj = Order(userId,orderId,medId,count,manId,0);
 		orderMap[++orderCount] = obj;
 	}
 
