@@ -1,0 +1,28 @@
+npm -v
+6.9.0
+
+node -v 
+v8.11.4
+*********************************Creating Contracts**************************
+make a directory
+
+truffle unbox pet-shop
+
+touch contracts/Meds.sol
+
+**For deployment  Med.deployed().then(function(i) { app=i })
+
+'_' local declaration
+
+string in new version "string memory _randomvariable"
+ 
+Contarct and Filename should be same and the filename should be in capital
+****************** For interfacing**************************************
+npm install web3
+
+For viewing accounts 
+
+web3.eth.getAccounts()
+
+js is asynchronous (Api is json)
+We have to contract ka json asynchronously , then instance will be 
