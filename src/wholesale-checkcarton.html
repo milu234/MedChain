@@ -134,10 +134,10 @@
                     <ul>
                         <li class="menu-title">Main</li>
                         <li class="active">
-                            <a href="company-neworder.html"><i class="fa fa-dashboard"></i> <span>New Order</span></a>
+                            <a href="wholesale-neworder.html"><i class="fa fa-dashboard"></i> <span>New Order</span></a>
                         </li>
 						             <li>
-                            <a href="company-checkstatus.html"><i class="fa fa-user-md"></i> <span>Check Status</span></a>
+                            <a href="wholesale-checkorder.html"><i class="fa fa-user-md"></i> <span>Order Status</span></a>
                         </li>
                     </ul>
                 </div>
@@ -145,172 +145,70 @@
         </div>
 
 
-        <!--Middle Layer starts here -->
+<!--Middle Layer starts here-->
 
-        <div class="page-wrapper">
+<div class="page-wrapper">
             <div class="content">
                 <div class="row">
-
-
-                    <div class="col-lg-8 offset-lg-2">
-                        <h4 class="page-title">Place a New Order</h4>
+                    <div class="col-sm-12">
+                        <h4 class="page-title">Check Carton Status</h4>
                     </div>
-
-
                 </div>
                 <div class="row">
-                    <div class="col-lg-8 offset-lg-2">
-                        <form>
-                            <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-striped custom-table datatable mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Carton ID</th>
+                                        <th>Manufacturing Date</th>
+                                        <th>Expiry Date</th>
+                                        <th>Carton Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="order-summary.html">#INV-0001</a></td>
+                                        <td>12-9-18</td>
+                                        <td>12-9-19</td>
+                                        <td>Accepted</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="invoice-view.html">#INV-0002</a></td>
+                                        <td>11-10-18</td>
+                                        <td>9-10-19</td>
+                                        <td>Rejected</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="invoice-view.html">#INV-0003</a></td>
 
-
-
-                              <div class="col-sm-6">
-                                  <div class="form-group">
-                                      <label>Manufacturer Name</label>
-                                       <select class="form-control input-sm">
-                                          <option>Cipla Pvt Ltd</option>
-                                          <option>Johnson & JohnsonIndia Ltd.</option>
-                                          <option>Kopran Limited</option>
-                                          <option>Chemspec Pvt Ltd</option>
-
-                                      </select>
-                                  </div>
-                              </div>
-                              </div>
-                          </form>
-                          </div>
-                  </div>
-
-
-
-
-
-
-
-
-                              <div class="row">
-                                  <div class="col-lg-8 offset-lg-2">
-                                      <form>
-                                        <div class="row">
-
-
-
-
-        <div class="col-xs-12">
-            <div class="col-md-12" >
-
-                <div id="field">
-                <div id="field0">
-<!-- Text input-->
-<div class = "col-sm-6">
-<div class="form-group">
-  <label for="action_id">Medicine Name <span class = "text-danger"></span></label>
-
-  <input class = "form-control" id="action_id" name="action_id" type="text" placeholder="" style="width:350px;">
-
-  </div>
-</div>
-
-<!-- Text input-->
-<div class = "col-sm-6">
-<div class="form-group">
-  <label  for="action_name">Medicine Count <span class = "text-danger"></span></label>
-
-  <input id="action_name" name="action_name" type="number" placeholder="" class="form-control" style="width:350px;">
-
-  </div>
-</div>
-
-
-<br><br>
-       <!-- File Button -->
-
-
-</div>
-</div>
-<!-- Button -->
-<div class="form-group">
-  <div class="col-md-4">
-    <button id="add-more" name="add-more" class="btn btn-primary">Add More</button>
-  </div>
-</div>
-<br><br>
-
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-
-                                          </div>
-
-
-
-                            <div class="m-t-20 text-center">
-                                <button class="btn btn-primary submit-btn">Place an Order</button>
-                            </div>
-
-
-                        </form>
+                                        <td>09-08-17</td>
+                                        <td>12-9-20</td>
+                                        <td>In-Transit</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
-        <!--Last Layer ends here -->
 
 
 
-        <div class="sidebar-overlay" data-reff=""></div>
-    <script src="assets/js/jquery-3.2.1.min.js"></script>
-  <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.slimscroll.js"></script>
-    <script src="assets/js/Chart.bundle.js"></script>
-    <script src="assets/js/chart.js"></script>
-    <script src="assets/js/app.js"></script>
+
+
+<!--Middle Layer ends here-->
+
+
+<div class="sidebar-overlay" data-reff=""></div>
+<script src="assets/js/jquery-3.2.1.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.dataTables.min.js"></script>
+<script src="assets/js/dataTables.bootstrap4.min.js"></script>
+<script src="assets/js/jquery.slimscroll.js"></script>
+<script src="assets/js/app.js"></script>
 
 </body>
-
-
-
-<script>
-
-
-  $(document).ready(function () {
-      //@naresh action dynamic childs
-      var next = 0;
-      $("#add-more").click(function(e){
-          e.preventDefault();
-          var addto = "#field" + next;
-          var addRemove = "#field" + (next);
-          next = next + 1;
-          var newIn = ' <div id="field'+ next +'" name="field'+ next +'"><!-- Text input--><div class = "col-sm-6"><div class="form-group"> <label  for="action_id">Medicine Name<span class="text-danger"></span></label>  <input id="action_id" name="action_id" type="text" placeholder="" class="form-control" style="width:350px;"> </div></div><br><br> <!-- Text input--><div class="col-sm-6>"<div class="form-group"> <label for="action_name">Medicine Count<span class="text-danger"></span></label>  <input id="action_name" name="action_name" type="text" placeholder="" class="form-control" style="width:350px;"> </div></div><br><br>';
-          var newInput = $(newIn);
-          var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me" >Remove</button></div></div><div id="field"> <br><br>';
-          var removeButton = $(removeBtn);
-          $(addto).after(newInput);
-          $(addRemove).after(removeButton);
-          $("#field" + next).attr('data-source',$(addto).attr('data-source'));
-          $("#count").val(next);
-
-              $('.remove-me').click(function(e){
-                  e.preventDefault();
-                  var fieldNum = this.id.charAt(this.id.length-1);
-                  var fieldID = "#field" + fieldNum;
-                  $(this).remove();
-                  $(fieldID).remove();
-              });
-      });
-
-  });
-
-
-</script>
-
 
 </html>
