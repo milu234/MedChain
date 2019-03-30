@@ -32,6 +32,14 @@ contract UserInfo {
 	constructor() public {
 		admin = msg.sender;
 		admin_license = " ";
+		userMap[msg.sender] = 1; 
+		userslist[1].accountId = msg.sender;
+		userslist[1].name = 'Admin';
+		userslist[1].email = 'admin@.dasdha';
+		userslist[1].contactNumber = '78954624612';
+		userslist[1].licenseid = '465as46das1d621';
+		userslist[1].utype = userType.Admin;
+		userCount = 1;
 	}
 
 	modifier onlyAdmin{ 
@@ -50,14 +58,6 @@ contract UserInfo {
 	    }
 	}
 	
-	// function users(string memory uname, string memory uemail, string memory ucontactNumber) public {
- //        // Admin is the first user of the system at index 1
- //        bytes32 name = stringToBytes32(uname);
- //        bytes32 email = stringToBytes32(uemail);
- //        bytes32 contactNumber = stringToBytes32(ucontactNumber);
- //        userslist[++userCount] = User(admin, name, email, contactNumber, admin_license, userType.Admin);
- //        userMap[admin] = userCount;
- //    }
 
 	function addUser(address account,string memory uname,string memory uemail,string memory ucontactNumber, string memory ulicenseid, userType utype) public onlyAdmin{
         bytes32 name = stringToBytes32(uname);
@@ -67,6 +67,10 @@ contract UserInfo {
         userslist[++userCount] = User(account, name, email, contactNumber, licenseid, utype);
         userMap[account] = userCount;
 	}
+
+	function getValue(uint _index)public returns (uint){
+      return uint(userslist[_index].utype);
+  }
 
 }
 
