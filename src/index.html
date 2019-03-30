@@ -1,61 +1,762 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <!--====== USEFULL META ======-->
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Pete's Pet Shop</title>
+    <meta name="description" content="Decentralised Supply Chain for Drugs" />
+    <meta name="keywords" content="Supply Chain,Drugs,Counterfeit" />
 
-    <!-- Bootstrap -->
+    <!--====== TITLE TAG ======-->
+    <title>Med-Chain</title>
+
+    <!--====== FAVICON ICON =======-->
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.png" />
+
+    <!--====== STYLESHEETS ======-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/stellarnav.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--====== MAIN STYLESHEETS ======-->
+    <link href="style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <style>
+    /* Full-width input fields */
+      :focus{
+         outline:0;
+      }
+      /*input {
+        box-sizing: border-box;
+        min-width: 100%;
+        max-width: 100%;
+      }*/
+
+      input[type=text], input[type=password] {
+            /*position: relative;*/
+          width: 45%;
+          /*padding: 5px;*/
+          margin: 8px 0;
+          display: inline;
+          border: none;
+          border-bottom: 1px solid #ccc;
+          box-sizing: border-box;
+            /*width: 100%;
+            margin-top: 5px;
+            height: 25px;
+            padding: 5px 10px;
+            background-color: rgb(215, 215, 215);
+            line-height: 20px;
+            font-size: 12px;
+            color: rgb(136, 136, 136);
+            border-radius: 2px 2px 2px 2px;
+            border: 1px solid rgb(114, 114, 114);
+            box-shadow: 0 1px 0 rgba(24, 24, 24,0.1);*/
+            transition: all 1s ease;
+      }
+      input[type=text]:focus, input[type=password]:focus{
+          box-shadow: 1px 2px 0px grey;
+          transform: translateY(-5px);
+      }
+      /* Extra styles for the cancel button */
+      .cancelbtn {
+          width: auto;
+          padding: 10px 18px;
+          background-color: #f44336;
+      }
+      /* Center the image and position the close button */
+      .imgcontainer {
+          text-align: center;
+          margin: 24px 0 12px 0;
+          position: relative;
+      }
+      img.avatar {
+          width: 40%;
+          border-radius: 50%;
+      }
+      .container {
+          padding: 16px;
+      }
+      span.psw {
+          float: right;
+          padding-top: 16px;
+      }
+    /* The Modal (background) */
+      .modal1 {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 10; /* Sit on top */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: hidden; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+          padding-top: 60px;
+      }
+      /* Modal Content/Box */
+      .modal1-content {
+          background-color: #fefefe;
+          margin: 10% auto 25% auto; /* 5% from the top, 15% from the bottom and centered */
+          border: 1px solid #888;
+          border-radius: 10px;
+          /*box-sizing: border-box;*/
+          width: 40%; /* Could be more or less, depending on screen size */
+      }
+      /* The Close Button (x) */
+      .close {
+          position: absolute;
+          right: 25px;
+          top: 0;
+          color: #000;
+          font-size: 35px;
+          font-weight: bold;
+      }
+      .close:hover,
+      .close:focus {
+          color: red;
+          cursor: pointer;
+      }
+      /* Add Zoom Animation */
+      .animate {
+          -webkit-animation: animatezoom 0.6s;
+          animation: animatezoom 0.6s
+      }
+      @-webkit-keyframes animatezoom {
+          from {-webkit-transform: scale(0)}
+          to {-webkit-transform: scale(1)}
+      }
+
+      @keyframes animatezoom {
+          from {transform: scale(0)}
+          to {transform: scale(1)}
+      }
+      /* Change styles for span and cancel button on extra small screens */
+      @media screen and (max-width: 300px) {
+          span.psw {
+             display: block;
+             float: none;
+          }
+          .cancelbtn {
+             width: 100%;
+          }
+      }
+    </style>
+
+
+
+
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body class="home-one">
+
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-push-2">
-          <h1 class="text-center">Pete's Pet Shop</h1>
-          <hr/>
-          <br/>
-        </div>
-      </div>
 
-      <div id="petsRow" class="row">
-        <!-- PETS LOAD HERE -->
-      </div>
+    <!--- PRELOADER -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
     </div>
 
-    <div id="petTemplate" style="display: none;">
-      <div class="col-sm-6 col-md-4 col-lg-3">
-        <div class="panel panel-default panel-pet">
-          <div class="panel-heading">
-            <h3 class="panel-title">Scrappy</h3>
-          </div>
-          <div class="panel-body">
-            <img alt="140x140" data-src="holder.js/140x140" class="img-rounded img-center" style="width: 100%;" src="https://animalso.com/wp-content/uploads/2017/01/Golden-Retriever_6.jpg" data-holder-rendered="true">
-            <br/><br/>
-            <strong>Breed</strong>: <span class="pet-breed">Golden Retriever</span><br/>
-            <strong>Age</strong>: <span class="pet-age">3</span><br/>
-            <strong>Location</strong>: <span class="pet-location">Warren, MI</span><br/><br/>
-            <button class="btn btn-default btn-adopt" type="button" data-id="0">Adopt</button>
-          </div>
+    <!--SCROLL TO TOP-->
+    <a href="#home" class="scrolltotop"><i class="fa fa-long-arrow-up"></i></a>
+
+    <!--START TOP AREA-->
+    <header class="top-area" id="home">
+        <div class="top-area-bg" data-stellar-background-ratio="0.6"></div>
+        <div class="header-top-area">
+            <!--MAINMENU AREA-->
+            <div class="mainmenu-area" id="mainmenu-area">
+                <div class="mainmenu-area-bg"></div>
+                <nav class="navbar">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="#home" class="navbar-brand"><img src="images/logo.png" alt="logo"></a>
+                        </div>
+                        <div class="search-and-language-bar pull-right">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-user"></i></a></li>
+                                <li class="search-box"><i class="fa fa-search"></i></li>
+                                <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
+                                <li class="select-language">
+                                    <select name="#" id="#">
+                                    <option selected value="End">ENG</option>
+                                    <option value="ARA">ARA</option>
+                                    <option value="CHI">CHI</option>
+                                </select>
+                                </li>
+                            </ul>
+                            <form action="#" class="search-form">
+                                <input type="search" name="search" id="search">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                        <div id="main-nav" class="stellarnav">
+                            <ul id="nav" class="nav navbar-nav">
+                                <li><a href="index.html">home</a>
+
+                                </li>
+                                <li><a href="index.html">about</a>
+
+                                </li>
+                                <li><a href="index.html">Service</a>
+
+                                </li>
+                                <li><a href="index.html">Other Pages</a>
+
+                                </li>
+                                <li><a href="blog.html">Blog</a>
+
+                                </li>
+                                <li><a href="contact.html">Contact</a>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!--END MAINMENU AREA END-->
         </div>
-      </div>
+        <!--HOME SLIDER AREA-->
+        <div class="welcome-slider-area">
+            <div class="welcome-single-slide slider-bg-two">
+                <div class="container">
+                    <div class="row flex-v-center">
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="welcome-text text-center">
+                                <h1>Med-Chain</h1>
+                                <p>We believe in providing end-to-end delivery for drugs</p>
+                                <div class="home-button">
+                                    <a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+                                    <a href="../preclinic/template/login.html">Signup</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="welcome-single-slide slider-bg-two">
+                <div class="container">
+                    <div class="row flex-v-center">
+                        <!-- <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button> -->
+
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="welcome-text text-center">
+
+                                <h1>Med-Chain</h1>
+                                <p>Counterfeiting and fake drugs in Drug Industry is now a history.</p>
+                                <div class="home-button">
+                                    <a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+                                    <a href="../preclinic/template/login.html">Signup</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!--END HOME SLIDER AREA-->
+    </header>
+    <!--END TOP AREA-->
+
+    <!--modal is here -->
+    <div id="id01" class="modal1">
+
+
+      <form class="modal1-content animate" method="POST" action="index">
+
+    <!--close in modal begins here -->
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3jckKIP74XqmpQnmJThxp-nSGMcXFuZVisp12G5tJ4P1Cw0ERVA" alt="Avatar" class="avatar"> -->
+        </div>
+    <!--close ends here -->
+
+        <div class="container">
+          <!-- <label for="uname"><b>Username</b></label> -->
+          <br><br>
+          <input type="text" name="username" id="username" placeholder="Username" required>
+
+          <!-- <label for="psw"><b>Password</b></label> -->
+          <br><br>
+          <input type="password" placeholder="Password" id="password" name="password" required>
+          <br><br>
+
+          <!-- <button class="login-button" type="submit">Login</button> -->
+          <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>
+        </div>
+      </form>
     </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/web3.min.js"></script>
-    <script src="js/truffle-contract.js"></script>
-    <script src="js/app.js"></script>
-  </body>
+    <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+    <!--BLOG AREA-->
+    <section class="blog-area gray-bg padding-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                    <div class="single-blog wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="blog-image">
+                            <img src="images/blog/blog_1.jpg" alt="">
+                        </div>
+                        <div class="blog-details text-center">
+                            <div class="blog-meta"><a href="#"><i class="fa fa-ship"></i></a></div>
+                            <h3><a href="single-blog.html">Ocean Freight</a></h3>
+                            <p>Worried about transportation through sea routes?Don't worry.We 've held your back</p>
+                            <a href="single-blog.html" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                    <div class="single-blog wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="blog-image">
+                            <img src="images/blog/blog_2.jpg" alt="">
+                        </div>
+                        <div class="blog-details text-center">
+                            <div class="blog-meta"><a href="#"><i class="fa fa-plane"></i></a></div>
+                            <h3><a href="single-blog.html">Air Freight</a></h3>
+                            <p>Worried about tracking cartons while in plane.Gotcha..We have got the perfect solution for you.</p>
+                            <a href="single-blog.html" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+                    <div class="single-blog wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="blog-image">
+                            <img src="images/blog/blog_3.jpg" alt="">
+                        </div>
+                        <div class="blog-details text-center">
+                            <div class="blog-meta"><a href="#"><i class="fa fa-truck"></i></a></div>
+                            <h3><a href="single-blog.html">Street Freight</a></h3>
+                            <p>No more counterfeiting as every truck is smartly monitored.Cool isnt' it!!!</p>
+                            <a href="single-blog.html" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--BLOG AREA END-->
+
+
+    <!--SERVICE AREA-->
+    <section class="service-area">
+        <div class="service-top-area padding-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3 col-sm-12 col-xs-12">
+                        <div class="area-title text-center wow fadeIn">
+                            <h2>Our Service</h2>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+                        <div class="service-content wow fadeIn">
+                            <h2>we offer quick & powerful logistics solution</h2>
+                            <p>I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you.</p>
+                            <a href="service.html" class="read-more">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+                        <div class="service-catalouge-content-area wow fadeIn">
+                            <div class="service-catalouge-bg"></div>
+                            <div class="row">
+                                <div class="col-md-7 col-lg-7 col-md-offset-5 col-lg-offset-5 col-sm-12 col-xs-12">
+                                    <div class="catalouge-content">
+                                        <h3>Why Choose Us ?</h3>
+                                        <p>I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you.</p>
+                                        <ul>
+                                            <li><i class="fa fa-check"></i> Lorem ipsum dolor sit amet, consectetur.</li>
+                                            <li><i class="fa fa-check"></i> Sed quia consequuntur magni dolores eos.</li>
+                                            <li><i class="fa fa-check"></i> Nemo enim ipsam voluptatem .</li>
+                                            <li><i class="fa fa-check"></i> We denounce with righteous indignation.</li>
+                                        </ul>
+                                        <a href="service.html" class="read-more">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="service-bottom-area section-padding">
+            <div class="service-bottom-area-bg"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 col-md-offset-6 col-lg-offset-6 col-sm-12 col-xs-12">
+                        <div class="service-list wow fadeIn">
+                            <div class="single-service">
+                                <div class="service-icon-hexagon">
+                                    <div class="hex">
+                                        <div class="service-icon">
+                                            <i class="fa fa-dropbox"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="service-details">
+                                    <h4>Ware House</h4>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                                    <a href="#">read more</a>
+                                </div>
+                            </div>
+                            <div class="single-service">
+                                <div class="service-icon-hexagon">
+                                    <div class="hex">
+                                        <div class="service-icon"><i class="fa fa-truck"></i></div>
+                                    </div>
+                                </div>
+                                <div class="service-details">
+                                    <h4>Road Freight</h4>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                                    <a href="#">read more</a>
+                                </div>
+                            </div>
+                            <div class="single-service">
+                                <div class="service-icon-hexagon">
+                                    <div class="hex">
+                                        <div class="service-icon"><i class="fa fa-ship"></i></div>
+                                    </div>
+                                </div>
+                                <div class="service-details">
+                                    <h4>Sea Freight</h4>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                                    <a href="#">read more</a>
+                                </div>
+                            </div>
+                            <div class="single-service">
+                                <div class="service-icon-hexagon">
+                                    <div class="hex">
+                                        <div class="service-icon"><i class="fa fa-plane"></i></div>
+                                    </div>
+                                </div>
+                                <div class="service-details">
+                                    <h4>Air Freight</h4>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                                    <a href="#">read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--SERVICE AREA END-->
+    <!--PROMO AREA-->
+    <section class="promo-area">
+        <div class="promo-top-area section-padding wow fadeIn">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                        <div class="single-promo">
+                            <div class="promo-icon"><i class="fa fa-anchor"></i></div>
+                            <div class="promo-details">
+                                <h3>Our Location</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                        </div>
+                        <div class="single-promo">
+                            <div class="promo-icon"><i class="fa fa-newspaper-o"></i></div>
+                            <div class="promo-details">
+                                <h3>Latest News</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                        <div class="single-promo">
+                            <div class="promo-icon"><i class="fa fa-umbrella"></i></div>
+                            <div class="promo-details">
+                                <h3>24/7 Support</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                        </div>
+                        <div class="single-promo">
+                            <div class="promo-icon"><i class="fa fa-bicycle"></i></div>
+                            <div class="promo-details">
+                                <h3>Fast Delevery</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="promo-bottom-area section-padding">
+            <div class="promo-botton-area-bg" data-stellar-background-ratio="0.6"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 col-sm-12 col-xs-12 text-center">
+                        <div class="promo-bottom-content wow fadeIn">
+                            <h2>Won't it be great if records in supply chains become immutable.We promise rather than make sure no unauthorized entity can fool our system.(Not even us)</h2>
+                            <a href="#" class="read-more">Get a quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--PROMO AREA END-->
+
+    <!--TESTMONIAL AREA -->
+    <section class="testmonial-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3 col-sm-12 col-xs-12">
+                    <div class="area-title text-center wow fadeIn">
+                        <h2>what client’s say</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+                    <div class="client-photo-list wow fadeIn">
+                        <div class="client_photo">
+                            <div class="item">
+                                <img src="images/testmonial/1.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="images/testmonial/2.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="images/testmonial/3.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="images/testmonial/1.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="images/testmonial/2.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="client_nav">
+                        <span class="fa fa-angle-left testi_prev"></span>
+                        <span class="fa fa-angle-right testi_next"></span>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-10 col-md-offset-1 text-center">
+                    <div class="client-details-content wow fadeIn">
+                        <div class="client_details">
+                            <div class="item">
+                                <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </q>
+                                <h3>JABIN KANE</h3>
+                                <p>CEO, TOPSMMPANEL.COM</p>
+                            </div>
+                            <div class="item">
+                                <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </q>
+                                <h3>JABIN KANE</h3>
+                                <p>CEO, TOPSMMPANEL.COM</p>
+                            </div>
+                            <div class="item">
+                                <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </q>
+                                <h3>JABIN KANE</h3>
+                                <p>CEO, TOPSMMPANEL.COM</p>
+                            </div>
+                            <div class="item">
+                                <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </q>
+                                <h3>JABIN KANE</h3>
+                                <p>CEO, TOPSMMPANEL.COM</p>
+                            </div>
+                            <div class="item">
+                                <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </q>
+                                <h3>JABIN KANE</h3>
+                                <p>CEO, TOPSMMPANEL.COM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--TESTMONIAL AREA END -->
+
+    <!--FOOER AREA-->
+    <div class="footer-area dark-bg">
+        <div class="footer-area-bg"></div>
+        <div class="footer-top-area wow fadeIn">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                        <div class="subscribe-content">
+                            <h2>Weekly Newsletter</h2>
+                            <p>There are many vaiations of passages of lorem ipsum available.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                        <div class="subscriber-form-area">
+                            <form action="#" class="subsriber-form">
+                                <label for="subscriber-mail"><i class="fa fa-envelope-o"></i></label>
+                                <input type="email" name="subscriber-mail" id="subscriber-mail" placeholder="Enter Your Mail">
+                                <button type="submit">subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="footer-border"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-area wow fadeIn">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
+                        <div class="single-footer-widget footer-about">
+                            <h3>About Us</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <ul>
+                                <li><i class="fa fa-phone"></i> <a href="callto:+8801911854378">+8801911854378</a></li>
+                                <li><i class="fa fa-map-marker"></i> <a href="mailto:backpiper.com@gmail.com">backpiper.com@gmail.com</a></li>
+                                <li><i class="fa fa-phone"></i> Gazipur, 1704, Bangladesh. 1215.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
+                        <div class="single-footer-widget twitter-widget">
+                            <h3>Latest Tweets</h3>
+                            <ul>
+                                <li>
+                                    <div class="twitter-icon"><i class="fa fa-phone"></i></div>
+                                    <div class="tweet-detail">
+                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem .</p>
+                                        <a href="#" class="tweet-meta">5 Miniutes Ago</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="twitter-icon"><i class="fa fa-phone"></i></div>
+                                    <div class="tweet-detail">
+                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem .</p>
+                                        <a href="#" class="tweet-meta">5 Miniutes Ago</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
+                        <div class="single-footer-widget list-widget">
+                            <h3>Customer Service</h3>
+                            <ul>
+                                <li><a href="#">Support Forums</a></li>
+                                <li><a href="#">Communication</a></li>
+                                <li><a href="#">FAQS</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Rules & Condition</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
+                        <div class="single-footer-widget instafeed-widget">
+                            <h3>Customer Service</h3>
+                            <ul>
+                                <li><a href="#"><img src="images/instafeed/1.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="images/instafeed/2.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="images/instafeed/3.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="images/instafeed/4.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="images/instafeed/5.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="images/instafeed/6.jpg" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="footer-border"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                        <div class="footer-copyright wow fadeIn">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                        <div class="footer-social-bookmark text-right wow fadeIn">
+                            <ul class="social-bookmark">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--FOOER AREA END-->
+
+
+
+
+
+    <!--====== SCRIPTS JS ======-->
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+
+    <!--====== PLUGINS JS ======-->
+    <script src="js/vendor/jquery.easing.1.3.js"></script>
+    <script src="js/vendor/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/vendor/jquery.appear.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/stellar.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/stellarnav.min.js"></script>
+    <script src="js/contact-form.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+
+    <!--===== ACTIVE JS=====-->
+    <script src="js/main.js"></script>
+</body>
+
 </html>
