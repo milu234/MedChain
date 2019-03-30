@@ -156,51 +156,46 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
-                        <form>
+                        <form onSubmit="Stack.addstackholder();">
+                        <!-- <form onSubmit=""> -->
                             <div class="row">
                               <div class="col-sm-6">
                                   <div class="form-group">
                                       <label>Address</label>
-                                      <select class="form-control input-sm">
-                                          <option>0x1234567890</option>
-                                          <option>0x1234567890</option>
-                                          <option>0x1234567890</option>
-                                          <option>0x1234567890</option>
-
-                                      </select>
+                                    <input id="ad" class="form-control" type="text" required>
                                   </div>
                               </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Name</label>
-                                        <input class="form-control" type="text">
+                                        <input id="Name" class="form-control" type="text" required>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Email <span class="text-danger"></span></label>
-                                        <input class="form-control" type="email">
+                                        <input id="Email" class="form-control" type="email" required>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>License ID <span class="text-danger"></span></label>
-                                        <input type="text" class="form-control">
+                                        <input id="License" type="text" class="form-control" required>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Contact</label>
-                                        <input class="form-control" type="text">
+                                        <input id="Contact" class="form-control" type="text" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Role</label>
-                                        <select class="form-control input-sm">
+                                        <select id="Role" class="form-control input-sm">
                                             <option>Pharmacist</option>
                                             <option>Wholesale Dealer</option>
                                             <option>Company</option>
@@ -212,7 +207,8 @@
                             </div>
 
                             <div class="m-t-20 text-center">
-                                <button class="btn btn-primary submit-btn">Create User</button>
+                                <input id="btnSubmit" type="submit" value="Create User" />
+                                <!-- <button type="submit" id="submit" onClclass="btn btn-primary submit-btn">Create User</button> -->
                             </div>
                         </form>
                     </div>
@@ -226,9 +222,13 @@
 	<script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.slimscroll.js"></script>
-    <script src="assets/js/Chart.bundle.js"></script>
+    <!-- <script src="assets/js/Chart.bundle.js"></script>
     <script src="assets/js/chart.js"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="assets/js/app.js"></script> -->
+
+    <!--===== WEB3 JS=====-->
+    <script src="Web3/addStakeholder.js"></script>
+    <script src="js/truffle-contract.js"></script>
 
 </body>
 
