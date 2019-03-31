@@ -134,10 +134,10 @@
                     <ul>
                         <li class="menu-title">Main</li>
                         <li class="active">
-                            <a href="admin-panel.html"><i class="fa fa-dashboard"></i> <span>Add User</span></a>
+                            <a href="company-checkorder.html"><i class="fa fa-dashboard"></i> <span>Check Order</span></a>
                         </li>
 						             <li>
-                            <a href="add-medicine.html"><i class="fa fa-user-md"></i> <span>Add Medicines</span></a>
+                            <a href="company-processorder.html"><i class="fa fa-user-md"></i> <span>Process Order</span></a>
                         </li>
                     </ul>
                 </div>
@@ -145,90 +145,66 @@
         </div>
 
 
+<!--Middle Layer starts here-->
 
-        <!--Middle Screen begins here-->
-        <div class="page-wrapper">
+<div class="page-wrapper">
             <div class="content">
                 <div class="row">
-                    <div class="col-lg-8 offset-lg-2">
-                        <h4 class="page-title">Add User</h4>
+                    <div class="col-sm-12">
+                        <h4 class="page-title">Check Order Status</h4>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-8 offset-lg-2">
-                        <form onSubmit="Stack.addstackholder();">
-                        <!-- <form onSubmit=""> -->
-                            <div class="row">
-                              <div class="col-sm-6">
-                                  <div class="form-group">
-                                      <label>Address</label>
-                                    <input id="ad" class="form-control" type="text" required>
-                                  </div>
-                              </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label>Name</label>
-                                        <input id="Name" class="form-control" type="text" required>
-                                    </div>
-                                </div>
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-striped custom-table datatable mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Wholesaler Name</th>
+                                        <th>Order Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="company-processorder.html">#INV-0001</a></td>
+                                        <td>Cipla Pvt Ltd</td>
+                                        <td>Accepted</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="company-processorder.html">#INV-0002</a></td>
 
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label>Email <span class="text-danger"></span></label>
-                                        <input id="Email" class="form-control" type="email" required>
-                                    </div>
-                                </div>
+                                        <td>Cipla Pvt Ltd</td>
+                                        <td>Accepted</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="company-processorder.html">#INV-0003</a></td>
 
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label>License ID <span class="text-danger"></span></label>
-                                        <input id="License" type="text" class="form-control" required>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label>Contact</label>
-                                        <input id="Contact" class="form-control" type="text" required>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label>Role</label>
-                                        <select id="Role" class="form-control input-sm">
-                                            <option>Pharmacist</option>
-                                            <option>Wholesale Dealer</option>
-                                            <option>Company</option>
-                                            <option>Transporter</option>
-
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="m-t-20 text-center">
-                                <input id="btnSubmit" type="submit" value="Create User" />
-                                <!-- <button type="submit" id="submit" onClclass="btn btn-primary submit-btn">Create User</button> -->
-                            </div>
-                        </form>
+                                        <td>Cipla Pvt Ltd</td>
+                                        <td>Accepted</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
-        <!--Middle Screen ends here-->
 
 
-        <div class="sidebar-overlay" data-reff=""></div>
-    <script src="assets/js/jquery-3.2.1.min.js"></script>
-	<script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.slimscroll.js"></script>
-    <!-- <script src="assets/js/Chart.bundle.js"></script>
-    <script src="assets/js/chart.js"></script>
-    <script src="assets/js/app.js"></script> -->
 
-    <!--===== WEB3 JS=====-->
-    <script src="Web3/addStakeholder.js"></script>
-    <script src="js/truffle-contract.js"></script>
+
+
+<!--Middle Layer ends here-->
+
+
+<div class="sidebar-overlay" data-reff=""></div>
+<script src="assets/js/jquery-3.2.1.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.dataTables.min.js"></script>
+<script src="assets/js/dataTables.bootstrap4.min.js"></script>
+<script src="assets/js/jquery.slimscroll.js"></script>
+<script src="assets/js/app.js"></script>
 
 </body>
 

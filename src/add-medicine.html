@@ -155,17 +155,14 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
-                        <form>
+                        <form onSubmit="Stack.addmedi();"></form>
                             <div class="row">
 
                               <div class="col-sm-6">
                                   <div class="form-group">
                                       <label>Manufacturer Name</label>
-                                       <select class="form-control input-sm">
-                                          <option>Cipla Pvt Ltd</option>
-                                          <option>Johnson & JohnsonIndia Ltd.</option>
-                                          <option>Kopran Limited</option>
-                                          <option>Chemspec Pvt Ltd</option>
+                                       <select name = "select" id="select" class="form-control input-sm">
+                                          
 
                                       </select>
                                   </div>
@@ -174,14 +171,14 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Medicine Name<span class="text-danger"></span></label>
-                                        <input class="form-control" type="text">
+                                        <input id="Name" class="form-control" type="text" required>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Price <span class="text-danger"></span></label>
-                                        <input type="number" class="form-control">
+                                        <input id="Price" type="number" class="form-control" required>
                                     </div>
                                 </div>
 
@@ -190,7 +187,7 @@
                             </div>
 
                             <div class="m-t-20 text-center">
-                                <button class="btn btn-primary submit-btn">Add Medicine</button>
+                                <input onclick="extr();" id="btnSubmit" type="button" value="Add Medicine" />
                             </div>
                         </form>
                     </div>
@@ -209,6 +206,10 @@
     <script src="assets/js/chart.js"></script>
     <script src="assets/js/app.js"></script>
 
+    <script src="Web3/addmedi.js"></script>
+    <script src="js/truffle-contract.js"></script>
+
+    
 </body>
 
 </html>

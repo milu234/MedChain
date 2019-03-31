@@ -10,8 +10,8 @@ contract OrderWholesaler{
 	// 	rejected
 	// }
 	UserInfo user;
-	uint orderCount;
-	uint distinctOrders;
+	uint public orderCount;
+	uint public distinctOrders;
 	uint defManId;
 	uint userId;
 
@@ -53,7 +53,7 @@ contract OrderWholesaler{
 
 	function acceptOrder(uint orderId) public{
 		require(orderId<=distinctOrders);
-		for(uint i=0;i<orderCount;i++){
+		for(uint i=1;i<orderCount;i++){
 			if(orderMap[i].status == 0){
 				if(orderMap[i].orderId == orderId){
 					orderMap[i].status = uint(1);
@@ -65,7 +65,7 @@ contract OrderWholesaler{
 
 	function rejectOrder(uint orderId) public{
 		require(orderId<=distinctOrders);
-		for(uint i=0;i<orderCount;i++){
+		for(uint i=1;i<orderCount;i++){
 			if(orderMap[i].status == 0){
 				if(orderMap[i].orderId == orderId){
 					orderMap[i].status = uint(2);
