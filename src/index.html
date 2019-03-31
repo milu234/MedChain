@@ -1,4 +1,4 @@
-<!doctype html>
+    <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
@@ -32,12 +32,12 @@
     <link href="style.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
     <style>
-    /* Full-width input fields */
+        /* Full-width input fields */
       :focus{
          outline:0;
       }
@@ -202,10 +202,10 @@
                                 <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
                                 <li class="select-language">
                                     <select name="#" id="#">
-                                    <option selected value="End">ENG</option>
-                                    <option value="ARA">ARA</option>
-                                    <option value="CHI">CHI</option>
-                                </select>
+                                        <option selected value="End">ENG</option>
+                                        <option value="ARA">ARA</option>
+                                        <option value="CHI">CHI</option>
+                                    </select>
                                 </li>
                             </ul>
                             <form action="#" class="search-form">
@@ -250,8 +250,7 @@
                                 <h1>Med-Chain</h1>
                                 <p>We believe in providing end-to-end delivery for drugs</p>
                                 <div class="home-button">
-                                    <a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
-                                    <a href="../preclinic/template/login.html">Signup</a>
+                                    <a id="loginbutton" href="#" onclick="App.redirect()" style="width:auto;">Dashboard</a>
                                 </div>
                             </div>
                         </div>
@@ -268,9 +267,8 @@
 
                                 <h1>Med-Chain</h1>
                                 <p>Counterfeiting and fake drugs in Drug Industry is now a history.</p>
-                                <div class="home-button">
-                                    <a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
-                                    <a href="../preclinic/template/login.html">Signup</a>
+                                <div id="home-button" class="home-button">
+                                    <a id="loginbutton" href="#" onclick="App.redirect()" style="width:auto;">Dashboard</a>
                                 </div>
                             </div>
                         </div>
@@ -289,40 +287,40 @@
     <div id="id01" class="modal1">
 
 
-      <form class="modal1-content animate" method="POST" action="index">
+        <form class="modal1-content animate" method="POST" action="index">
 
-    <!--close in modal begins here -->
-        <div class="imgcontainer">
-            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-          <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3jckKIP74XqmpQnmJThxp-nSGMcXFuZVisp12G5tJ4P1Cw0ERVA" alt="Avatar" class="avatar"> -->
-        </div>
-    <!--close ends here -->
+            <!--close in modal begins here -->
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3jckKIP74XqmpQnmJThxp-nSGMcXFuZVisp12G5tJ4P1Cw0ERVA" alt="Avatar" class="avatar"> -->
+            </div>
+            <!--close ends here -->
 
-        <div class="container">
-          <!-- <label for="uname"><b>Username</b></label> -->
-          <br><br>
-          <input type="text" name="username" id="username" placeholder="Username" required>
+            <div class="container">
+                <!-- <label for="uname"><b>Username</b></label> -->
+                <br><br>
+                <input type="text" name="username" id="username" placeholder="Username" required>
 
-          <!-- <label for="psw"><b>Password</b></label> -->
-          <br><br>
-          <input type="password" placeholder="Password" id="password" name="password" required>
-          <br><br>
+                <!-- <label for="psw"><b>Password</b></label> -->
+                <br><br>
+                <input type="password" placeholder="Password" id="password" name="password" required>
+                <br><br>
 
-          <!-- <button class="login-button" type="submit">Login</button> -->
-          <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>
-        </div>
-      </form>
+                <!-- <button class="login-button" type="submit">Login</button> -->
+                <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>
+            </div>
+        </form>
     </div>
 
     <script>
-    // Get the modal
-    var modal = document.getElementById('id01');
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
+        // Get the modal
+        var modal = document.getElementById('id01');
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         }
-    }
     </script>
     <!--BLOG AREA-->
     <section class="blog-area gray-bg padding-top">
@@ -349,7 +347,8 @@
                         <div class="blog-details text-center">
                             <div class="blog-meta"><a href="#"><i class="fa fa-plane"></i></a></div>
                             <h3><a href="single-blog.html">Air Freight</a></h3>
-                            <p>Worried about tracking cartons while in plane.Gotcha..We have got the perfect solution for you.</p>
+                            <p>Worried about tracking cartons while in plane.Gotcha..We have got the perfect solution
+                                for you.</p>
                             <a href="single-blog.html" class="read-more">Read More</a>
                         </div>
                     </div>
@@ -381,7 +380,8 @@
                     <div class="col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3 col-sm-12 col-xs-12">
                         <div class="area-title text-center wow fadeIn">
                             <h2>Our Service</h2>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, </p>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                laudantium, </p>
                         </div>
                     </div>
                 </div>
@@ -389,7 +389,8 @@
                     <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
                         <div class="service-content wow fadeIn">
                             <h2>we offer quick & powerful logistics solution</h2>
-                            <p>I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you.</p>
+                            <p>I must explain to you how all this mistaken idea of denouncing pleasure and praising
+                                pain was born and I will give you.</p>
                             <a href="service.html" class="read-more">Learn More</a>
                         </div>
                     </div>
@@ -400,7 +401,8 @@
                                 <div class="col-md-7 col-lg-7 col-md-offset-5 col-lg-offset-5 col-sm-12 col-xs-12">
                                     <div class="catalouge-content">
                                         <h3>Why Choose Us ?</h3>
-                                        <p>I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you.</p>
+                                        <p>I must explain to you how all this mistaken idea of denouncing pleasure and
+                                            praising pain was born and I will give you.</p>
                                         <ul>
                                             <li><i class="fa fa-check"></i> Lorem ipsum dolor sit amet, consectetur.</li>
                                             <li><i class="fa fa-check"></i> Sed quia consequuntur magni dolores eos.</li>
@@ -432,7 +434,8 @@
                                 </div>
                                 <div class="service-details">
                                     <h4>Ware House</h4>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                                        doloremque laudantium, totam rem aperiam.</p>
                                     <a href="#">read more</a>
                                 </div>
                             </div>
@@ -444,7 +447,8 @@
                                 </div>
                                 <div class="service-details">
                                     <h4>Road Freight</h4>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                                        doloremque laudantium, totam rem aperiam.</p>
                                     <a href="#">read more</a>
                                 </div>
                             </div>
@@ -456,7 +460,8 @@
                                 </div>
                                 <div class="service-details">
                                     <h4>Sea Freight</h4>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                                        doloremque laudantium, totam rem aperiam.</p>
                                     <a href="#">read more</a>
                                 </div>
                             </div>
@@ -468,7 +473,8 @@
                                 </div>
                                 <div class="service-details">
                                     <h4>Air Freight</h4>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                                        doloremque laudantium, totam rem aperiam.</p>
                                     <a href="#">read more</a>
                                 </div>
                             </div>
@@ -525,7 +531,8 @@
                 <div class="row">
                     <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 col-sm-12 col-xs-12 text-center">
                         <div class="promo-bottom-content wow fadeIn">
-                            <h2>Won't it be great if records in supply chains become immutable.We promise rather than make sure no unauthorized entity can fool our system.(Not even us)</h2>
+                            <h2>Won't it be great if records in supply chains become immutable.We promise rather than
+                                make sure no unauthorized entity can fool our system.(Not even us)</h2>
                             <a href="#" class="read-more">Get a quote</a>
                         </div>
                     </div>
@@ -579,27 +586,47 @@
                     <div class="client-details-content wow fadeIn">
                         <div class="client_details">
                             <div class="item">
-                                <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </q>
+                                <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur. </q>
                                 <h3>JABIN KANE</h3>
                                 <p>CEO, TOPSMMPANEL.COM</p>
                             </div>
                             <div class="item">
-                                <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </q>
+                                <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur. </q>
                                 <h3>JABIN KANE</h3>
                                 <p>CEO, TOPSMMPANEL.COM</p>
                             </div>
                             <div class="item">
-                                <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </q>
+                                <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur. </q>
                                 <h3>JABIN KANE</h3>
                                 <p>CEO, TOPSMMPANEL.COM</p>
                             </div>
                             <div class="item">
-                                <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </q>
+                                <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur. </q>
                                 <h3>JABIN KANE</h3>
                                 <p>CEO, TOPSMMPANEL.COM</p>
                             </div>
                             <div class="item">
-                                <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </q>
+                                <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur. </q>
                                 <h3>JABIN KANE</h3>
                                 <p>CEO, TOPSMMPANEL.COM</p>
                             </div>
@@ -715,7 +742,10 @@
                     <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                         <div class="footer-copyright wow fadeIn">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+                            <p>Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved | This
+                                template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                                    target="_blank">Colorlib</a></p>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </div>
                     </div>
@@ -755,8 +785,13 @@
     <script src="js/contact-form.js"></script>
     <script src="js/jquery.sticky.js"></script>
 
+
     <!--===== ACTIVE JS=====-->
     <script src="js/main.js"></script>
+
+    <!--===== WEB3 JS=====-->
+    <script src="Web3/index.js"></script>
+    <script src="js/truffle-contract.js"></script>
 </body>
 
 </html>

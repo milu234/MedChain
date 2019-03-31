@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <title>Med-Chain</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="header">
+			<div class="header-left">
+				<a href="index.html" class="logo">
+					<img src="assets/img/logo.jpg" width="35" height="35" alt=""> <span>Med-Chain</span>
+				</a>
+			</div>
+			<a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+            <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fa fa-bars"></i></a>
+            <ul class="nav user-menu float-right">
+                <li class="nav-item dropdown d-none d-sm-block">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="fa fa-bell-o"></i> <span class="badge badge-pill bg-danger float-right">3</span></a>
+                    <div class="dropdown-menu notifications">
+                        <div class="topnav-dropdown-header">
+                            <span>Notifications</span>
+                        </div>
+                        <div class="drop-scroll">
+                            <ul class="notification-list">
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+											<span class="avatar">
+												<img alt="John Doe" src="assets/img/user.jpg" class="img-fluid">
+											</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">John Doe</span> added new task <span class="noti-title">Patient appointment booking</span></p>
+												<p class="noti-time"><span class="notification-time">4 mins ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+											<span class="avatar">V</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Tarah Shropshire</span> changed the task name <span class="noti-title">Appointment booking with payment gateway</span></p>
+												<p class="noti-time"><span class="notification-time">6 mins ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+											<span class="avatar">L</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Misty Tison</span> added <span class="noti-title">Domenic Houston</span> and <span class="noti-title">Claire Mapes</span> to project <span class="noti-title">Doctor available module</span></p>
+												<p class="noti-time"><span class="notification-time">8 mins ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+											<span class="avatar">G</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Rolland Webber</span> completed task <span class="noti-title">Patient and Doctor video conferencing</span></p>
+												<p class="noti-time"><span class="notification-time">12 mins ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+											<span class="avatar">V</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Bernardo Galaviz</span> added new task <span class="noti-title">Private chat module</span></p>
+												<p class="noti-time"><span class="notification-time">2 days ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="topnav-dropdown-footer">
+                            <a href="activities.html">View all Notifications</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown d-none d-sm-block">
+                    <a href="javascript:void(0);" id="open_msg_box" class="hasnotifications nav-link"><i class="fa fa-comment-o"></i> <span class="badge badge-pill bg-danger float-right">8</span></a>
+                </li>
+                <li class="nav-item dropdown has-arrow">
+                    <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
+                        <span class="user-img">
+							<img class="rounded-circle" src="assets/img/user.jpg" width="24" alt="Admin">
+							<span class="status online"></span>
+						</span>
+						<span>Admin</span>
+                    </a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="profile.html">My Profile</a>
+						<a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
+						<a class="dropdown-item" href="settings.html">Settings</a>
+						<a class="dropdown-item" href="login.html">Logout</a>
+					</div>
+                </li>
+            </ul>
+            <div class="dropdown mobile-user-menu float-right">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="profile.html">My Profile</a>
+                    <a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
+                    <a class="dropdown-item" href="settings.html">Settings</a>
+                    <a class="dropdown-item" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                    <ul>
+                        <li class="menu-title">Main</li>
+                        <li class="active">
+                            <a href="wholesale-neworder.html"><i class="fa fa-dashboard"></i> <span>New Order</span></a>
+                        </li>
+						             <li>
+                            <a href="wholesale-checkorder.html"><i class="fa fa-user-md"></i> <span>Order Status</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+<!--Middle Layer starts here-->
+
+<div class="page-wrapper">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="page-title">Collection of Orders</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-striped custom-table datatable mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Container ID</th>
+                                        <th>Manufacturing Date</th>
+                                        <th>Packaging Date</th>
+                                        <th>Expiry Date</th>
+                                        
+                                        <th>Barcode Number</th>
+                                        <th>Confirm Barcode Number</th>
+                                        <th>Check</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="order-summary.html">#INV-0001</a></td>
+                                        <td>ABMS968040376</td>
+                                        <td>12-9-18</td>
+                                        <td>12-9-18</td>
+                                        <td>12-9-19</td>
+                                        <td><div class="form-group">
+                                            
+                                            <div class="col-sm-10">
+                                              <input class="form-control" id="focusedInput1" type="text" value = "8902968040376" disabled>
+                                            </div>
+                                          </div>
+                                        </td>
+
+                                        <td>
+
+                                            <div class="form-group">
+                                                
+                                                <div class="col-sm-10">
+                                                  <input class="form-control" id="textInput1" type="text" placeholder="Enter the Barcode Number">
+                                                </div>
+                                              </div>
+
+                                        </td>
+
+                                        <td>
+                                            <button type="button" class="btn btn-primary" onclick ="verify1()"  >Check</button>
+                                        </td>
+                                        <td>
+                                            <p id="demo1"></p>
+                                            </td>
+                                        
+
+                                    </tr>
+                                    <tr>
+                                        <td><a href="invoice-view.html">#INV-0001</a></td>
+                                        <td>ABMS968040377</td>
+                                        <td>11-10-18</td>
+                                        <td>11-10-18</td>
+                                        <td>9-10-19</td>
+                                        <td>
+                                            <div class="form-group">
+                                            
+                                                <div class="col-sm-10">
+                                                  <input class="form-control" id="focusedInput2" type="text" value = "8902968040376" disabled>
+                                                </div>
+                                              </div>
+                                        </td>
+                                <td>
+                                        <div class="form-group">
+                                                
+                                            <div class="col-sm-10">
+                                              <input class="form-control" id="textInput2" type="text" placeholder="Enter the Barcode Number">
+                                            </div>
+                                          </div>
+                                </td>
+
+                                
+                                <td>
+                                        <button type="button" class="btn btn-primary" onclick ="verify2()">Check</button>
+                                    </td>
+
+                                    <td>
+                                            <p id="demo2"></p>
+                                    </td>
+                                        
+
+                                    </tr>
+                                    <tr>
+                                        <td><a href="invoice-view.html">#INV-0001</a></td>
+                                        <td>ABMS968040378</td>
+                                        <td>09-08-17</td>
+                                        <td>09-08-17</td>
+                                        <td>12-9-20</td>
+                                        <td><div class="form-group">
+                                            
+                                            <div class="col-sm-10">
+                                              <input class="form-control" id="focusedInput3" type="text" value = "8902968040376" disabled>
+                                            </div>
+                                          </div>
+                                        </td>
+
+                                        <td>
+                                            <div class="form-group">
+                                                
+                                                <div class="col-sm-10">
+                                                  <input class="form-control" id="textInput3" type="text" placeholder="Enter the Barcode Number">
+                                                </div>
+                                              </div>
+
+                                        </td>
+
+
+                                        
+                                        <td>
+                                                <button type="button" class="btn btn-primary" onclick ="verify3()"  >Check</button>
+                                            </td>
+
+                                        <td>
+                                            <text id="demo3"></text>
+                                            </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><a href="invoice-view.html">#INV-0002</a></td>
+                                        <td>BBMS063031609</td>
+                                        <td>09-08-17</td>
+                                        <td>09-08-17</td>
+                                        <td>12-9-20</td>
+                                        <td><div class="form-group">
+                                            
+                                            <div class="col-sm-10">
+                                              <input class="form-control" id="focusedInput4" type="text" value = "8902968040376" disabled>
+                                            </div>
+                                          </div>
+                                        </td>
+
+                                        <td>
+                                            <div class="form-group">
+                                                
+                                                <div class="col-sm-10">
+                                                  <input class="form-control" id="textInput4" type="text" placeholder="Enter the Barcode Number">
+                                                </div>
+                                              </div>
+
+
+                                        </td>
+
+                                        
+                                        <td>
+                                                <button type="button" class="btn btn-primary" onclick ="verify4()"  >Check</button>
+                                            </td>
+
+                                            <td>
+                                                    <p id="demo4"></p>
+                                                    </td>
+                                                
+
+                                    </tr>
+
+                                    <tr>
+                                        <td><a href="invoice-view.html">#INV-0002</a></td>
+                                        <td>BBMS063031610</td>
+                                        <td>09-08-17</td>
+                                        <td>09-08-17</td>
+                                        <td>12-9-20</td>
+                                        <td><div class="form-group">
+                                            
+                                            <div class="col-sm-10">
+                                              <input class="form-control" id="focusedInput5" type="text" value = "8902968040376" disabled>
+                                            </div>
+                                          </div></td>
+
+                                          <td>
+                                            <div class="form-group">
+                                                
+                                                <div class="col-sm-10">
+                                                  <input class="form-control" id="textInput5" type="text" placeholder="Enter the Barcode Number">
+                                                </div>
+                                              </div>
+
+                                          </td>
+
+                                          
+                                        <td>
+                                                <button type="button" class="btn btn-primary" onclick ="verify5()"  >Check</button>
+                                            </td>
+
+                                            <td>
+                                                    <p id="demo5"></p>
+                                                    </td>
+                                                
+
+                                    </tr>
+
+                                    <tr>
+                                        <td><a href="invoice-view.html">#INV-0003</a></td>
+                                        <td>CBMS063031612</td>
+                                        <td>09-08-17</td>
+                                        <td>09-08-17</td>
+                                        <td>12-9-20</td>
+                                        <td>
+                                            <div class="form-group">
+                                            
+                                                <div class="col-sm-10">
+                                                  <input class="form-control" id="focusedInput6" type="text" value = "8902968040376" disabled>
+                                                </div>
+                                              </div>
+                                        </td>
+
+                                            <td>
+
+                                                <div class="form-group">
+                                                
+                                                    <div class="col-sm-10">
+                                                      <input class="form-control" id="textInput6" type="text" placeholder="Enter the Barcode Number">
+                                                    </div>
+                                                  </div>
+    
+                                            </td>
+
+                                            
+                                        <td>
+                                                <button type="button" class="btn btn-primary" onclick ="verify6()"  >Check</button>
+                                            </td>
+
+                                            <td>
+                                                    <p id="demo6"></p>
+                                                    </td>
+                                                
+
+                                    </tr>
+;
+
+                                </tbody>
+                            </table>
+                            <br><br>
+                            <button type="button" class="btn btn-primary" onclick ="SuccessCount()"  >Get Success Count</button>
+                            <br><br>
+
+                            <button type="button" class="btn btn-primary" onclick ="FailureCount()"  >Get Failure Count</button>
+
+                       
+
+                              <br><br>    
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+<!--Middle Layer ends here-->
+
+
+<div class="sidebar-overlay" data-reff=""></div>
+<script src="assets/js/jquery-3.2.1.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.dataTables.min.js"></script>
+<script src="assets/js/dataTables.bootstrap4.min.js"></script>
+<script src="assets/js/jquery.slimscroll.js"></script>
+<script src="assets/js/app.js"></script>
+
+</body>
+
+<script>
+    var Success_count1  = 0;
+    var Failure_count1 = 0;
+    var Success_count2  = 0;
+    var Failure_count2 = 0;
+    var Success_count3  = 0;
+    var Failure_count3 = 0;
+    var Success_count4  = 0;
+    var Failure_count4 = 0;
+    var Success_count5  = 0;
+    var Failure_count5 = 0;
+    var Success_count6  = 0;
+    var Failure_count6 = 0;
+   function verify1(){ 
+     fc1 = 0;
+     sc1 = 0;
+    var focusedInput1  = document.getElementById('focusedInput1').value;
+    var textInput1   = document.getElementById('textInput1').value;
+    // var focusedInput1 = "8902968040376";
+  
+    if( focusedInput1 == textInput1){
+        
+        document.getElementById("demo1").innerHTML = "Success";
+        document.getElementById("demo1").style.color = 'green';
+        Success_count1++;
+        sc1 = Success_count1;
+        
+    }
+    else{
+        
+        document.getElementById("demo1").innerHTML = "Failed";
+        document.getElementById("demo1").style.color = 'red';
+        Failure_count1++;
+        fc1 = Failure_count1;
+    }
+}
+
+// **********************************************************
+function verify2(){
+    fc2 = 0;
+    sc2 = 0; 
+    var focusedInput1  = document.getElementById('focusedInput2').value;
+    var textInput1   = document.getElementById('textInput2').value;
+    // var focusedInput1 = "8902968040376";
+    
+    
+
+    if( focusedInput1 == textInput1){
+        
+        document.getElementById("demo2").innerHTML = "Success";
+        document.getElementById("demo2").style.color = 'green';
+        Success_count2++;
+        sc2 = Success_count2;
+    }
+    else{
+        
+        document.getElementById("demo2").innerHTML = "Failed";
+        document.getElementById("demo2").style.color = 'red';
+        Failure_count2++;
+        fc2 = Failure_count2;
+        
+    }
+}   
+ 
+// *********************************************************************
+
+   function verify3(){
+    sc3 = 0;
+    fc3 = 0; 
+    var focusedInput1  = document.getElementById('focusedInput3').value;
+    var textInput1   = document.getElementById('textInput3').value;
+    
+    // var focusedInput1 = "8902968040376";
+
+    
+    if( focusedInput1 == textInput1){
+        
+        document.getElementById("demo3").innerHTML = "Success";
+        document.getElementById("demo3").style.color = 'green';
+        Success_count3++;
+        sc3 = Success_count3;
+    }
+    else{
+        
+        document.getElementById("demo3").innerHTML = "Failed";
+        document.getElementById("demo3").style.color = 'red';
+        Failure_count3++;
+        fc3 = Failure_count3;
+    }
+}
+
+// ***********************************************************************
+
+   function verify4(){
+       
+   fc4 = 0;
+   sc4 = 0;
+    var focusedInput1  = document.getElementById('focusedInput4').value;
+    var textInput1   = document.getElementById('textInput4').value;
+    // var focusedInput1 = "8902968040376";
+ 
+    if( focusedInput1 == textInput1){
+        
+        document.getElementById("demo4").innerHTML = "Success";
+        document.getElementById("demo4").style.color = 'green';
+        Success_count4++;
+        sc4 = Success_count4;
+    }
+    else{
+        
+        document.getElementById("demo4").innerHTML = "Failed";
+        document.getElementById("demo4").style.color = 'red';
+        Failure_count4++;
+        fc4 = Failure_count4;
+    }
+}
+
+// *******************************************************************************************************
+
+   function verify5(){
+    sc5 = 0;
+    fc5 = 0; 
+    var focusedInput1  = document.getElementById('focusedInput5').value;
+    var textInput1   = document.getElementById('textInput5').value;
+    // var focusedInput1 = "8902968040376";
+ 
+    if( focusedInput1 == textInput1){
+        
+        document.getElementById("demo5").innerHTML = "Success";
+        document.getElementById("demo5").style.color = 'green';
+        Success_count5++;
+        sc5 = Success_count5;
+    }
+    else{
+        
+        document.getElementById("demo5").innerHTML = "Failed";
+        document.getElementById("demo5").style.color = 'red';
+        Failure_count5++;
+        fc5 = Failure_count5;
+    }
+}
+
+
+// *******************************************************************************************************
+
+   function verify6(){ 
+    sc6 = 0;
+    fc6 = 0;
+    var focusedInput1  = document.getElementById('focusedInput6').value;
+    var textInput1   = document.getElementById('textInput6').value;
+    // var focusedInput1 = "8902968040376";
+
+    if( focusedInput1 == textInput1){
+        
+        document.getElementById("demo6").innerHTML = "Success";
+        document.getElementById("demo6").style.color = 'green';
+        Success_count6++;
+        sc6 = Success_count6;
+        
+    }
+    else{
+        
+        document.getElementById("demo6").innerHTML = "Failed";
+        document.getElementById("demo6").style.color = 'red';
+        Failure_count6++;
+        fc6 = Failure_count6;
+    
+    }
+}
+
+// *************************************************************************************************************
+ function SuccessCount(){
+    alert(sc1 + sc2 + sc3 +sc4 + sc5 + sc6);
+ }
+
+ function FailureCount(){
+    alert(fc1+ fc2 + fc3 + fc4 + fc5 + fc6);
+ }
+
+ 
+
+
+</script>
+
+</html>
