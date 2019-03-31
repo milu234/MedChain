@@ -43,7 +43,29 @@ contract OrderProcess {
 
     mapping(uint =>Order) public accessorder;
 
-    function companydispatch(uint _companyid,uint _warehouseid,uint _cartoncount)private{
+    constructor() public {
+    
+        companydispatch(1,1,5);
+        companydispatch(1,1,10);
+        addCarton("8901063031647",1,500,1,500,"sad","31-03-2019","31-03-2022");
+        addCarton("8901063031646",1,500,1,500,"sad","31-03-2019","31-03-2022");
+        addCarton("8901063031645",1,500,1,500,"sad","31-03-2019","31-03-2022");
+        addCarton("8901063031643",1,500,1,500,"sad","31-03-2019","31-03-2022");
+        addCarton("8901063031642",1,500,1,500,"sad","31-03-2019","31-03-2022");
+
+        addCarton("8901063031644",1,200,1,500,"sad","31-03-2019","31-03-2022");
+        addCarton("8901063031645",1,200,1,500,"sad","31-03-2019","31-03-2022");
+        addCarton("8901063031646",1,200,1,500,"sad","31-03-2019","31-03-2022");
+        addCarton("8901063031646",1,200,1,500,"sad","31-03-2019","31-03-2022");
+        addCarton("8901063031647",1,200,1,500,"sad","31-03-2019","31-03-2022");
+        addCarton("8901063031648",1,200,1,500,"sad","31-03-2019","31-03-2022");
+        addCarton("8901063031649",1,200,1,500,"sad","31-03-2019","31-03-2022");
+        addCarton("8901063031642",1,200,1,500,"sad","31-03-2019","31-03-2022");
+        addCarton("8901063031641",1,200,1,500,"sad","31-03-2019","31-03-2022");
+        addCarton("8901063031643",1,200,1,500,"sad","31-03-2019","31-03-2022");
+    }
+
+    function companydispatch(uint _companyid,uint _warehouseid,uint _cartoncount)public{
         orderid++;
         Order storage orderVariable = accessorder[orderid];
         orderVariable.companyid = _companyid;
@@ -54,7 +76,7 @@ contract OrderProcess {
         orderVariable.status = orderStatus.OrderAccepted;
     }
 
-    function addCarton(bytes32 _barcodehash,uint _orderid,uint _accepted,uint _medicineid,uint _medicinecount,bytes32  _batchno,bytes32  _manudate,bytes32  _expirydate)private{
+    function addCarton(bytes32 _barcodehash,uint _orderid,uint _accepted,uint _medicineid,uint _medicinecount,bytes32  _batchno,bytes32  _manudate,bytes32  _expirydate)public{
         publicCartonCount++;
         Order storage orderVariable = accessorder[_orderid];
         Carton storage cartonVariable = cartonorder[publicCartonCount];
